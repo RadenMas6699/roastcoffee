@@ -9,6 +9,9 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
 
+RUN apt-get update
+RUN apt install -y libgl1-mesa-glx
+
 # Install all required packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
